@@ -1,9 +1,9 @@
 # LMS Project
 
-A full-stack Learning Management System built using Next.js (App Router), MongoDB (Mongoose), Tailwind CSS, and NextAuth.js. This project uses JavaScript only.
+A full-stack Learning Management System built using Next.js (App Router), MongoDB (Mongoose), and Tailwind CSS. This project uses JavaScript only.
 
 ## Features
-- Authentication with NextAuth.js
+- Authentication: simple placeholder login (no NextAuth)
 - Student and Admin dashboards
 - Course creation, enrollment, and progress tracking
 - Responsive and modular UI
@@ -11,7 +11,7 @@ A full-stack Learning Management System built using Next.js (App Router), MongoD
 ## Tech Stack
 - Framework: Next.js (App Router)
 - Database: MongoDB via Mongoose
-- Authentication: NextAuth.js
+- Authentication: simple placeholder login (no NextAuth)
 - Styling: Tailwind CSS
 - Language: JavaScript
 
@@ -37,7 +37,7 @@ cd lms-project
 npm install
 ```
 
-3. Create `.env.local` based on `.env.local.example` and provide your MongoDB connection string and NEXTAUTH settings.
+3. Create `.env.local` based on `.env.local.example` and provide your MongoDB connection string.
 
 4. Run the development server
 
@@ -51,4 +51,4 @@ npm run dev
 
 ## Notes
 - This repository is scaffolded for JavaScript (no TypeScript). Adjust package versions if needed.
-- Configure NextAuth providers in `.env.local` and in `app/api/auth/[...nextauth]/route.js` before first sign-in.
+-- Configure authentication as needed. The project includes a placeholder login page at `/login`.

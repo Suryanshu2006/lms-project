@@ -1,8 +1,6 @@
-NextAuth configuration notes:
+Authentication notes:
 
-1. Create a GitHub OAuth App at https://github.com/settings/developers with the callback URL: http://localhost:3000/api/auth/callback/github
-2. Set `GITHUB_ID` and `GITHUB_SECRET` in `.env.local`.
-3. Generate a strong `NEXTAUTH_SECRET` using `openssl rand -hex 32` or an online generator and add it to `.env.local`.
+This project previously used NextAuth. For simplicity the default setup now uses a local placeholder login form under `/login`.
 
 Database:
 - Provide `MONGODB_URI` in `.env.local` pointing to your MongoDB Atlas or local MongoDB instance.
