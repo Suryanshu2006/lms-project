@@ -5,7 +5,7 @@ export function middleware(req) {
   const { pathname } = req.nextUrl
 
   // Public routes
-  const publicPaths = ['/', '/login', '/register', '/signin', '/api', '/api/register', '/api/model-check']
+  const publicPaths = ['/', '/login', '/register', '/api', '/api/register', '/api/model-check']
   const isPublic = publicPaths.some((path) => pathname === path || pathname.startsWith(`${path}/`))
 
   // Allow public paths
@@ -24,8 +24,8 @@ export function middleware(req) {
     return NextResponse.redirect(url)
   }
 
-  // If accessing signin/login while authenticated, redirect to appropriate dashboard
-  if (pathname.startsWith('/login') || pathname.startsWith('/signin')) {
+  // If accessing login while authenticated, redirect to appropriate dashboard
+  if (pathname.startsWith('/login')) {
     let dashboard = '/'
     if (sessionRole === 'admin') dashboard = '/admin_dashboard'
     else if (sessionRole === 'student') dashboard = '/student_dashboard'
@@ -55,5 +55,5 @@ export function middleware(req) {
 }
 
 export const config = {
-  matcher: ['/admin_dashboard/:path*', '/student_dashboard/:path*', '/login', '/signin']
+  matcher: ['/admin_dashboard/:path*', '/student_dashboard/:path*', '/login']
 }
